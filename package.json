@@ -12,5 +12,9 @@
     "lucide-react": "^0.563.0",
     "recharts": "^3.7.0",
     "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.10",
+    "typescript": "~5.9.2"
   }
 }
