@@ -23,9 +23,16 @@ app.use(helmet({
 app.use(morgan('dev'));
 
 // Database Connection
+let dbError = null;
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/expense-manager')
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.error('MongoDB Connection Error:', err));
+    .then(() => {
+        console.log('MongoDB Connected');
+        dbError = null;
+    })
+    .catch(err => {
+        console.error('MongoDB Connection Error:', err);
+        dbError = err.message;
+    });
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -36,6 +43,7 @@ app.get('/api/health', (req, res) => {
         status: 'UP',
         db: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
         readyState: mongoose.connection.readyState,
+        dbError: dbError,
         env: process.env.NODE_ENV
     });
 });
