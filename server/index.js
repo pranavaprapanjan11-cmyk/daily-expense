@@ -31,6 +31,15 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/expense-m
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/expenses', require('./routes/expenses'));
 
+app.get('/api/health', (req, res) => {
+    res.json({
+        status: 'UP',
+        db: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
+        readyState: mongoose.connection.readyState,
+        env: process.env.NODE_ENV
+    });
+});
+
 app.get('/', (req, res) => {
     res.send('Daily Expense Manager API');
 });
