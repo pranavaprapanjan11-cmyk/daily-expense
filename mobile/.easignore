@@ -1,0 +1,7 @@
+# EAS Ignore
+node_modules
+.expo
+dist
+.git
+.env*
+! .env.production
