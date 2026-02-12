@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, FlatList, StyleSheet, Alert } from 'react-native';
 import { Text, Card, IconButton, useTheme } from 'react-native-paper';
-import { useExpenses } from '../../context/ExpenseContext';
+import { useExpenses } from '../context/ExpenseContext';
 
-export default function History() {
+export default function HistoryScreen() {
     const { expenses, deleteExpense } = useExpenses();
     const theme = useTheme();
 
@@ -52,7 +52,7 @@ export default function History() {
                 )}
                 ListEmptyComponent={
                     <View style={styles.empty}>
-                        <Text>No history yet.</Text>
+                        <Text variant="bodyLarge" style={{ color: theme.colors.secondary }}>No transactions history.</Text>
                     </View>
                 }
                 contentContainerStyle={{ paddingBottom: 20 }}

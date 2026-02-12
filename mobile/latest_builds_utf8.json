@@ -1,0 +1,103 @@
+﻿[
+  {
+    "id": "96fa1037-8b75-4538-9797-901c437e6e52",
+    "status": "FINISHED",
+    "platform": "ANDROID",
+    "artifacts": {
+      "buildUrl": "https://expo.dev/artifacts/eas/jDiVLPrX7PdhBZxbXvNxDU.apk",
+      "applicationArchiveUrl": "https://expo.dev/artifacts/eas/jDiVLPrX7PdhBZxbXvNxDU.apk"
+    },
+    "fingerprint": {
+      "id": "019c500c-cc04-7ea5-9760-237897555a88",
+      "hash": "920612fd059d168c8675efb598094980b1d00986"
+    },
+    "initiatingActor": {
+      "id": "30adc215-12c7-48a7-b87d-9f6c5abf16c5",
+      "displayName": "pranav0611007"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/96fa1037-8b75-4538-9797-901c437e6e52/1770872520061-38488671-ca48-4c25-8080-d94b251928f8.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=1cbb77c9b5cd3397c7a799b2af66ec179e5b088ef9d05ea7da4b0a4484613b052a89c3b049c9508650f4367c1eb3a508cc393746ba9854cc158b36068f187fb4d6006a93680b84e310829756854b3063d88160c3baf19c1b81e219b733702fe29e4d6ff488e4c5aa36f8ba5774a540c08792c202f7fc05bc07e037f8b5ceaf892f2fcafb75d700f86921810d43c4569740bad8c5b7e635b5850a99d929382223a8e7bfb9970597110f4641019288cce9a6408486b9e7cadfbdff83a94a8299e53973ee14815d04dfc512b9b215957718a53ee649977ca4cbb5ebb72d4a96f8338823e3dc10b19b3f094ad7d7e5d22cafc67a05e40bfb3c72ae7584825c1bbf83",
+      "https://job-logs.eascdn.net/production/96fa1037-8b75-4538-9797-901c437e6e52/1770872521296-3d11df03-7e6f-4639-a1ed-e0338bb4dccd.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=34b4c4aa96d8e47f3d71874427ab67d898ac76a122f89fec7b3c643bff39cc4d084e601a9def3a0404c50786def527a8a5ba6f6ec1698229ad0e6cc4f4fae4c33ef7e4960db38e797db23a4ac1361fca943d3592d19a00234478112e16ca1e348cffa1f10899c67cac20c994268845adcfa052268f075febe6584dcae9a167823a9bbce75eb160089e159caf624cccc14551583efac8100dfd0903df2a0b52efae2265abbe10a5bc5f657eed99d1b3ba15293b319811e29cec769468372efade583545d941cb1b20d993548e02b9d5084168f8bfcc69127fd7e978f9dd962569d9a08f89864a86be4ead1f560c32508042de0c3854a16f5d88b1ce5cbfc99a44",
+      "https://job-logs.eascdn.net/production/96fa1037-8b75-4538-9797-901c437e6e52/1770872521567-95273f9a-178e-44ad-8b44-09d78233b059.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=6808e8db6e5b1dbe1ce50b2c2e64cf136f16099adb8980205ba300d2e682af9515137c61ef8d1c952b402c33d7c99c10d2bfe674afadb18b446c696748310b5234d5f7efd9fc8b8b18531ab6b187745752c4b80e1f7157f557dbeac0549194fa8dcb2c966125f84f3b63aa8a6e2bacf5c66fa0b0d249c94d51a34b324b0ecd671918d0fd44f6d6142173cead87aec0c37086ae8dfb79e336be89de217c2baf61c716044d738481ea48a62202a17d58245ebb7becb4a3364e4773a5c4836695f2a61e11850a6a2bb7842b075f231c25be307d810fb6bddad952d4fbd99387eec33127845e0d510ece363333535210e8ebaced0fc6732a4171cd4b70f24d160460",
+      "https://job-logs.eascdn.net/production/96fa1037-8b75-4538-9797-901c437e6e52/1770872521776-639df66c-a856-4ca1-af3b-ce97100ade04.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=8a6f9c23aa5b0289f4708548d8dd21184b937826bac8f4eaea3ee16f34fd2537130a4c983c141a95c0a4d9b8bc31a844da2bb9578aae54f683826c94330f4bda3d388df03af818243aded6d68518c328f9cc364ccb6c0b21c60f22bc0440d95de86116df735ed1003cee9a54b9a571ba23538d1a862eb0fcfe19bddeae25d30dd8e75742c9262ed843112524efa303d36fc61aca1aaee42839667dbf76a7975348aff6903c7681490e676255eee8b3d188164ef8d761d73abd63356ae26821fadfc984e68770c15bb9bd85ae8f813a472bea9b9c48f416b7184621479c83e60fc6a6c3e63c115e38afad31e2521f815ef838e8d90e6a8d85b9a7385f0289b775"
+    ],
+    "project": {
+      "id": "93b169b7-68e6-41b8-bfaf-5c9ed1ed1db0",
+      "name": "just-one-tea",
+      "slug": "just-one-tea",
+      "ownerAccount": {
+        "id": "4db08358-cd5c-4482-b094-6ad77ecf72ed",
+        "name": "pranav0611007"
+      }
+    },
+    "distribution": "INTERNAL",
+    "buildProfile": "preview",
+    "sdkVersion": "52.0.0",
+    "appVersion": "1.0.0",
+    "appBuildVersion": "1",
+    "gitCommitHash": "0dad0a2fd582446333c580003a14527947e27d98",
+    "gitCommitMessage": "Update MONGODB_URI to standard Atlas connection string",
+    "priority": "NORMAL",
+    "createdAt": "2026-02-12T05:01:59.794Z",
+    "updatedAt": "2026-02-12T05:11:40.243Z",
+    "completedAt": "2026-02-12T05:11:31.333Z",
+    "expirationDate": "2026-02-26T05:01:59.851Z",
+    "isForIosSimulator": false,
+    "metrics": {
+      "buildWaitTime": 142,
+      "buildQueueTime": 41064,
+      "buildDuration": 529916
+    }
+  },
+  {
+    "id": "40eab5b0-8ecb-4df1-86b1-71b84efa4ee6",
+    "status": "FINISHED",
+    "platform": "ANDROID",
+    "artifacts": {
+      "buildUrl": "https://expo.dev/artifacts/eas/91WwhojSXCnvYTsjHzrKrq.apk",
+      "applicationArchiveUrl": "https://expo.dev/artifacts/eas/91WwhojSXCnvYTsjHzrKrq.apk"
+    },
+    "fingerprint": {
+      "id": "019c500c-cc04-7ea5-9760-237897555a88",
+      "hash": "920612fd059d168c8675efb598094980b1d00986"
+    },
+    "initiatingActor": {
+      "id": "30adc215-12c7-48a7-b87d-9f6c5abf16c5",
+      "displayName": "pranav0611007"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869542183-2d931c06-10d3-4b72-812b-c5e234a7f7a4.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=651ae48368be5064d2e34f730307635ec3a97dec89f48c16d4bc2ca8cfeaaf8dd6117d72877dd20857d4837d8ae29a36c032c1d72ede27738c4444ea981e97566d9e9ad4135329abea2154936e257934bec582c961064693533d0eeb3bbd1543876579fa611562fe49ffaec4498d1b93ce9f3bae72f7e8b2da8cb5b59412756eaca76656a0f2101465081be3f5506df93a14273a0596d5091eddfd0cf46b229e88693a8596ef8dd37378d771a43b8bb9b223d606c2d07325a8c9bdb3bb49b8740351998ce606331c54d71c081521e3ded83bbe086254b38f31465869e5d90b06b583e5d50c25137449d5a77f5bd58b3977b5aceefdb6e4959fadb5f2ec6e9b88",
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869833021-0304f1ad-e325-4ba8-be81-508aa3356d85.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=5a361b01fd6cd264e4dcaa3bb6db5db07ac0124355ac28861fc580872ca1fdce864d9759c92cabb8415057f140758534193e8a531a921feda546664b05656a79935fa71b9983fc3d85ebcd7311851a2cfa3e737ca87c5458ccb95a58cf23a4dc9242e6ccf0978ee4bad609e33df71c45805d895804c6eb798eba51976f02819e017406a411b2fa5fa60ac0839c5eaf97766fedbcceaf72e041559b40eb9dc5d36198d148c7d626b31f7e1eb72400d330060b4a318ce9e8ffa1d32f263aff9be922b6a75ef57731ff0fd4d16a5776e23e51504ac74c73e316dd3850ecbb81fab7177f0350f4867c3dc8f56072aab9c9b4a499ef5a6bae1ca9d0582f2b64b97fe9",
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869835424-940c8987-3e94-49ff-bc82-85342eee91fe.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=5ced4bcf77d743641213e26bd3b9859fb936fcb7cd69db5b48df529ba261ea887d8b0bde9c8766be8369e651fe699a9ca4531ea958e5d7cf6b3159d55983d82429d7c6b878f54c94421afd9df94209bf43725c9a54d2edae7da20e615a13964079884f09e62693d0b18a6d2ba3dc17fe63fc34b04ccd9c0de77d545e872829be70e9156142c88c0d811eca051efb596b4395cce20043c3c469ab0e07648b549cc00a2f0a911a6bf1c0dbfce97b2854f3fd2ed00f33f9c993683926c75da2a365979f079c263cecde2aac954d7e4644b0794d0f56e86598c0ee2bf04567425ae3014a61016d354eb65f82ac246bfd9ed6f968b110d1b121a84dbc233ce715b510",
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869835685-86e90293-40fb-49fc-a7f2-a5d027940ec2.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=9bf46a09c8870b353c4312592e9531d92a0fea434b5d20d7b67eaefcb8d3a23f1887d332e96d4618d6510c35f324b3f850f433ee29780a39cf101d181a7dd46d584f4bda67e3b55ec0c039a32e11342f5afb3073cc3f5be57e309654bb724131cbbaf5db502e462b960390daca79df7052f52cbc447f83f92208aa851c8324e2442be662b0c45bb8274528a3e27b578d471be7a3c940cbe7d2a8505ffb526bc0663c71f8a089bf2b6951404374f58f819d06006a73cc82a56e8874571cc241503bd06c320eedeb09ba5f926ca3564525c200f8ae4df0ebd3d02425b6247513945e28f679931c9e9702078a5c403c9663f3fd6fd62a38367d892aaf302449f66e",
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869835902-c8537dec-f9f0-41df-9a9f-3f1dbba10422.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T051943Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=8e5d55bc8c3c4402dd2df6ae6035f536ff3f56e6e4105618ce313d3b63dea88bf9e2a2851b9a0e539b4f634c5cfbd533a9b8ff8b0ec2ea4f523f208645df22ec70670233884268ef4dfc4933d4df896ca0966c3823588e95e63c6391a7d849b824ab6577e17c4fab75b8d47ef520b677bda75f47eaae9931cfc81c7a4679a8a805750cb81e04f1919f60f5b6a1ade236a05d7c3dfd6f84cc3592b1a82b9892d729ba93e4992be808999254c31b676b56f275c3aab83f561f9fc4e2de164eac27e287056ce865b2f06c18edeaaa9987b74774ef02cafc76faa2670dcc4f0a028720e39e77cbca45eb57c0f72031aec17909366851a544deae36287bbb13e09c3c"
+    ],
+    "project": {
+      "id": "93b169b7-68e6-41b8-bfaf-5c9ed1ed1db0",
+      "name": "just-one-tea",
+      "slug": "just-one-tea",
+      "ownerAccount": {
+        "id": "4db08358-cd5c-4482-b094-6ad77ecf72ed",
+        "name": "pranav0611007"
+      }
+    },
+    "distribution": "INTERNAL",
+    "buildProfile": "preview",
+    "sdkVersion": "52.0.0",
+    "appVersion": "1.0.0",
+    "appBuildVersion": "1",
+    "gitCommitHash": "0dad0a2fd582446333c580003a14527947e27d98",
+    "gitCommitMessage": "Update MONGODB_URI to standard Atlas connection string",
+    "priority": "NORMAL",
+    "createdAt": "2026-02-12T04:12:21.811Z",
+    "updatedAt": "2026-02-12T04:26:11.993Z",
+    "completedAt": "2026-02-12T04:26:09.910Z",
+    "expirationDate": "2026-02-26T04:12:21.881Z",
+    "isForIosSimulator": false,
+    "metrics": {
+      "buildWaitTime": 292030,
+      "buildQueueTime": 31409,
+      "buildDuration": 504269
+    }
+  }
+]

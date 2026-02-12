@@ -1,0 +1,40 @@
+﻿[
+  {
+    "id": "40eab5b0-8ecb-4df1-86b1-71b84efa4ee6",
+    "status": "NEW",
+    "platform": "ANDROID",
+    "artifacts": {},
+    "fingerprint": {
+      "id": "019c500c-cc04-7ea5-9760-237897555a88",
+      "hash": "920612fd059d168c8675efb598094980b1d00986"
+    },
+    "initiatingActor": {
+      "id": "30adc215-12c7-48a7-b87d-9f6c5abf16c5",
+      "displayName": "pranav0611007"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/40eab5b0-8ecb-4df1-86b1-71b84efa4ee6/1770869542183-2d931c06-10d3-4b72-812b-c5e234a7f7a4.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260212%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260212T041603Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=054b569899a4642bf40b90f480c18415d48b1d9b265c477a17970d672c8ec04fd8a687a24270a24f83e79962392a20826759c0669bac8cf57ce8aa2a5d4d4f5febac5d902aed45ddded8013d39625d00bc7f2968f05e665d88e0183bed2a4cf96f098f914781f192054dc24d25123d4429f0ad8a22a4bfc0c149c3cc38215fc7dfe904402d1694546de28f3b46dd4976032ac21dcf1dde01b220af4701f01e72cf181a05820db386cd8c200832813f78e50a7d5cd9337a0a7b68c501cfe2a67ef4ee16fe6b4f967912933f8168ed6b9ede32ef53f965a74ae10b17476e2a12f759675739a06c8174ec9c6d885ab5339a92edbd956ccd4f4afd6ebb92b1d79405"
+    ],
+    "project": {
+      "id": "93b169b7-68e6-41b8-bfaf-5c9ed1ed1db0",
+      "name": "just-one-tea",
+      "slug": "just-one-tea",
+      "ownerAccount": {
+        "id": "4db08358-cd5c-4482-b094-6ad77ecf72ed",
+        "name": "pranav0611007"
+      }
+    },
+    "distribution": "INTERNAL",
+    "buildProfile": "preview",
+    "sdkVersion": "52.0.0",
+    "appVersion": "1.0.0",
+    "appBuildVersion": "1",
+    "gitCommitHash": "0dad0a2fd582446333c580003a14527947e27d98",
+    "gitCommitMessage": "Update MONGODB_URI to standard Atlas connection string",
+    "priority": "NORMAL",
+    "createdAt": "2026-02-12T04:12:21.811Z",
+    "updatedAt": "2026-02-12T04:12:22.381Z",
+    "expirationDate": "2026-02-26T04:12:21.881Z",
+    "isForIosSimulator": false
+  }
+]

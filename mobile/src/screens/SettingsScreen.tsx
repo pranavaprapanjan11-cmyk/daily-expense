@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Alert, Platform } from 'react-native';
-import { List, Switch, Button, Divider, Text, useTheme } from 'react-native-paper';
+import { View, StyleSheet, Alert } from 'react-native';
+import { List, Switch, Divider, Text, useTheme } from 'react-native-paper';
 import * as Notifications from 'expo-notifications';
-import { Storage } from '../../lib/storage';
-import { useExpenses } from '../../context/ExpenseContext';
+import { Storage } from '../lib/storage';
 
-// Configure notifications handler
-Notifications.setNotificationHandler({
-    handleNotification: async () => ({
-        shouldShowAlert: true,
-        shouldPlaySound: true,
-        shouldSetBadge: false,
-    } as Notifications.NotificationBehavior),
-});
-
-export default function Settings() {
+export default function SettingsScreen() {
     const [notificationsEnabled, setNotificationsEnabled] = useState(false);
     const theme = useTheme();
 
@@ -57,7 +47,7 @@ export default function Settings() {
                 type: Notifications.SchedulableTriggerInputTypes.DAILY,
                 hour: 20,
                 minute: 0,
-            } as Notifications.DailyTriggerInput,
+            } as any, // Cast to any to avoid complex type issues for now
         });
     };
 
@@ -72,7 +62,6 @@ export default function Settings() {
                     style: "destructive",
                     onPress: async () => {
                         await Storage.clear();
-                        // In a real app we'd reload the context, but simpler here to just alert
                         Alert.alert("Reset", "Data cleared. Please restart the app.");
                     }
                 }
@@ -108,8 +97,11 @@ export default function Settings() {
                 <Text variant="bodySmall" style={{ color: theme.colors.secondary }}>
                     Just One Tea v1.0.0
                 </Text>
+                <Text variant="labelSmall" style={{ color: theme.colors.surfaceVariant, marginTop: 4 }}>
+                    Device-Based Storage
+                </Text>
             </View>
-        </View>
+        </View >
     );
 }
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { TextInput, Button, Text, HelperText, useTheme, Chip } from 'react-native-paper';
-import { useRouter } from 'expo-router';
-import { useExpenses } from '../../context/ExpenseContext';
-import { CATEGORIES } from '../../lib/types';
+import { useNavigation } from '@react-navigation/native';
+import { useExpenses } from '../context/ExpenseContext';
+import { CATEGORIES } from '../lib/types';
 
-export default function AddExpense() {
+export default function AddExpenseScreen() {
     const [amount, setAmount] = useState('');
     const [category, setCategory] = useState(CATEGORIES[0]);
     const [note, setNote] = useState('');
@@ -13,15 +13,22 @@ export default function AddExpense() {
     const [loading, setLoading] = useState(false);
 
     const { addExpense } = useExpenses();
-    const router = useRouter();
+    const navigation = useNavigation<any>();
     const theme = useTheme();
+
+    const [error, setError] = useState('');
 
     const handleSubmit = async () => {
         if (!amount || isNaN(Number(amount))) {
-            Alert.alert("Invalid Amount", "Please enter a valid number");
+            setError("Please enter a valid amount");
+            return;
+        }
+        if (Number(amount) <= 0) {
+            setError("Amount must be greater than 0");
             return;
         }
 
+        setError('');
         setLoading(true);
         try {
             await addExpense({
@@ -33,7 +40,7 @@ export default function AddExpense() {
             setAmount('');
             setNote('');
             Alert.alert("Success", "Expense added successfully");
-            router.push("/"); // Go to Dashboard
+            navigation.navigate("Dashboard");
         } catch (e) {
             Alert.alert("Error", "Failed to add expense");
         } finally {

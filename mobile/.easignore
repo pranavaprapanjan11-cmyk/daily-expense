@@ -5,3 +5,7 @@ dist
 .git
 .env*
 ! .env.production
+n/
+mobile-fresh/
+android/
+ios/

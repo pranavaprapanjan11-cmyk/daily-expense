@@ -14,6 +14,7 @@ export type ExpenseContextType = {
     editExpense: (expense: Expense) => Promise<void>;
     summary: { category: string; total: number }[];
     loading: boolean;
+    refreshExpenses: () => Promise<void>;
 };
 
 export const CATEGORIES = ['Food', 'Travel', 'Snacks', 'Education', 'Personal', 'Others'];

@@ -1,35 +1,34 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Expense, ExpenseContextType } from '../lib/types';
 import { ExpenseAPI } from '../lib/api';
-import { useAuth } from './AuthContext';
 
 const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
 
 export const ExpenseProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [expenses, setExpenses] = useState<Expense[]>([]);
     const [loading, setLoading] = useState(false);
-    const { isAuthenticated } = useAuth();
 
     useEffect(() => {
-        if (isAuthenticated) {
-            loadData();
-        } else {
-            setExpenses([]);
-        }
-    }, [isAuthenticated]);
+        loadData();
+    }, []);
 
     const loadData = async () => {
         setLoading(true);
         try {
             const data = await ExpenseAPI.getExpenses();
+            // Safety check: Ensure data is an array
+            const expenseArray = Array.isArray(data) ? data : [];
+
             // Map MongoDB _id to id if necessary
-            const normalized = data.map((e: any) => ({
+            const normalized = expenseArray.map((e: any) => ({
                 ...e,
                 id: e._id || e.id
             }));
             setExpenses(normalized.sort((a: Expense, b: Expense) => new Date(b.date).getTime() - new Date(a.date).getTime()));
         } catch (e) {
             console.error("Failed to load expenses", e);
+            // Set empty array on error so app doesn't crash
+            setExpenses([]);
         } finally {
             setLoading(false);
         }
@@ -72,8 +71,12 @@ export const ExpenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
     });
     const summary = Array.from(summaryMap.entries()).map(([category, total]) => ({ category, total }));
 
+    const refreshExpenses = async () => {
+        await loadData();
+    };
+
     return (
-        <ExpenseContext.Provider value={{ expenses, addExpense, deleteExpense, editExpense, summary, loading }}>
+        <ExpenseContext.Provider value={{ expenses, addExpense, deleteExpense, editExpense, summary, loading, refreshExpenses }}>
             {children}
         </ExpenseContext.Provider>
     );
