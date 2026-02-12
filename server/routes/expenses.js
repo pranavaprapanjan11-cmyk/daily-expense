@@ -1,16 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const auth = require('../middleware/auth');
 const Expense = require('../models/Expense');
 
+// Middleware to get deviceId
+const getDeviceId = (req, res, next) => {
+    const deviceId = req.headers['x-device-id'];
+    if (!deviceId) {
+        return res.status(400).json({ msg: 'Device ID missing' });
+    }
+    req.deviceId = deviceId;
+    next();
+};
 
+router.use(getDeviceId);
 
-// Get all expenses for a user
-router.get('/', auth, async (req, res) => {
+// Get all expenses for specific device
+router.get('/', async (req, res) => {
     try {
-        const expenses = await Expense.find({ user: req.user.id }).sort({ date: -1 });
+        const expenses = await Expense.find({ deviceId: req.deviceId }).sort({ date: -1 });
         res.json(expenses);
     } catch (err) {
         console.error(err.message);
@@ -19,7 +27,7 @@ router.get('/', auth, async (req, res) => {
 });
 
 // Add new expense
-router.post('/', auth, async (req, res) => {
+router.post('/', async (req, res) => {
     const { amount, category, note, date } = req.body;
 
     try {
@@ -28,7 +36,7 @@ router.post('/', auth, async (req, res) => {
             category,
             note,
             date,
-            user: req.user.id
+            deviceId: req.deviceId
         });
 
         const expense = await newExpense.save();
@@ -40,7 +48,7 @@ router.post('/', auth, async (req, res) => {
 });
 
 // Update expense
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', async (req, res) => {
     const { amount, category, note, date } = req.body;
 
     // Build expense object
@@ -51,17 +59,12 @@ router.put('/:id', auth, async (req, res) => {
     if (date) expenseFields.date = date;
 
     try {
-        let expense = await Expense.findById(req.params.id);
+        let expense = await Expense.findOne({ _id: req.params.id, deviceId: req.deviceId });
 
         if (!expense) return res.status(404).json({ msg: 'Expense not found' });
 
-        // Make sure user owns expense
-        if (expense.user.toString() !== req.user.id) {
-            return res.status(401).json({ msg: 'Not authorized' });
-        }
-
-        expense = await Expense.findByIdAndUpdate(
-            req.params.id,
+        expense = await Expense.findOneAndUpdate(
+            { _id: req.params.id, deviceId: req.deviceId },
             { $set: expenseFields },
             { new: true }
         );
@@ -74,18 +77,13 @@ router.put('/:id', auth, async (req, res) => {
 });
 
 // Delete expense
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        let expense = await Expense.findById(req.params.id);
+        const expense = await Expense.findOne({ _id: req.params.id, deviceId: req.deviceId });
 
         if (!expense) return res.status(404).json({ msg: 'Expense not found' });
 
-        // Make sure user owns expense
-        if (expense.user.toString() !== req.user.id) {
-            return res.status(401).json({ msg: 'Not authorized' });
-        }
-
-        await Expense.findByIdAndDelete(req.params.id);
+        await Expense.findOneAndDelete({ _id: req.params.id, deviceId: req.deviceId });
 
         res.json({ msg: 'Expense removed' });
     } catch (err) {
@@ -95,10 +93,12 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 // Get expense summary (category wise total)
-router.get('/summary', auth, async (req, res) => {
+router.get('/summary', async (req, res) => {
     try {
         const summary = await Expense.aggregate([
-            { $match: { user: new mongoose.Types.ObjectId(req.user.id) } },
+            {
+                $match: { deviceId: req.deviceId }
+            },
             {
                 $group: {
                     _id: "$category",

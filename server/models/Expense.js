@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const ExpenseSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
     amount: {
         type: Number,
         required: true,
@@ -16,6 +11,11 @@ const ExpenseSchema = new mongoose.Schema({
         required: true,
         enum: ['Food', 'Travel', 'Snacks', 'Education', 'Personal', 'Others'],
         default: 'Others'
+    },
+    deviceId: {
+        type: String,
+        required: true,
+        index: true
     },
     note: {
         type: String,
@@ -33,7 +33,7 @@ const ExpenseSchema = new mongoose.Schema({
     }
 });
 
-// Index for faster queries on user and date
-ExpenseSchema.index({ user: 1, date: -1 });
+// Index for faster queries on date
+ExpenseSchema.index({ date: -1 });
 
 module.exports = mongoose.model('Expense', ExpenseSchema);

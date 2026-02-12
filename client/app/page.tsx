@@ -29,13 +29,15 @@ export default function Home() {
                   Simple, efficient, and student-friendly. Manage your budget, visualize your spending, and save more.
                 </p>
               </div>
-              <div className="space-x-4">
-                <Link href="/register">
-                  <Button size="lg">Get Started</Button>
+              <div className="space-y-4">
+                <Link href="/dashboard">
+                  <Button size="lg" className="w-full sm:w-auto h-14 text-lg">Enter App (No Login Required)</Button>
                 </Link>
-                <Link href="/login">
-                  <Button variant="outline" size="lg">Login</Button>
-                </Link>
+                <div className="flex justify-center gap-4">
+                  <Link href="/login" className="text-sm text-slate-500 hover:underline">Login</Link>
+                  <span className="text-slate-300">|</span>
+                  <Link href="/register" className="text-sm text-slate-500 hover:underline">Register</Link>
+                </div>
               </div>
             </div>
           </div>

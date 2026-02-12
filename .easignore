@@ -1,0 +1,9 @@
+# Ignore root-level monorepo folders to speed up mobile builds
+node_modules
+client
+server
+web
+dist
+.expo
+.git
+.env*
