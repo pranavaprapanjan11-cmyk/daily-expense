@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { List, Switch, Divider, Text, useTheme } from 'react-native-paper';
-import * as Notifications from 'expo-notifications';
 import { Storage } from '../lib/storage';
 
 export default function SettingsScreen() {
@@ -13,42 +12,16 @@ export default function SettingsScreen() {
     }, []);
 
     const checkPermission = async () => {
-        const { status } = await Notifications.getPermissionsAsync();
-        setNotificationsEnabled(status === 'granted');
+        // Notifications disabled for stabilization
+        setNotificationsEnabled(false);
     };
 
     const toggleNotifications = async () => {
-        if (notificationsEnabled) {
-            // Disable means canceling all
-            await Notifications.cancelAllScheduledNotificationsAsync();
-            setNotificationsEnabled(false);
-            Alert.alert("Notifications", "Daily reminders disabled.");
-        } else {
-            // Enable
-            const { status } = await Notifications.requestPermissionsAsync();
-            if (status === 'granted') {
-                await scheduleNotification();
-                setNotificationsEnabled(true);
-                Alert.alert("Notifications", "Daily reminder set for 8:00 PM!");
-            } else {
-                Alert.alert("Permission", "Notification permission denied.");
-            }
-        }
+        Alert.alert("Notice", "Reminders are temporarily disabled for app stability.");
     };
 
     const scheduleNotification = async () => {
-        await Notifications.cancelAllScheduledNotificationsAsync();
-        await Notifications.scheduleNotificationAsync({
-            content: {
-                title: " 📝 Daily Expense Reminder",
-                body: "Don't forget to track your expenses for today!",
-            },
-            trigger: {
-                type: Notifications.SchedulableTriggerInputTypes.DAILY,
-                hour: 20,
-                minute: 0,
-            } as any, // Cast to any to avoid complex type issues for now
-        });
+        // Disabled
     };
 
     const handleClearData = () => {
