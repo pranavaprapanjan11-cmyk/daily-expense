@@ -29,17 +29,21 @@ app.use(helmet({
 }));
 app.use(morgan('dev'));
 
-// Database Connection - FAIL FAST
+// Database Connection
 const connectDB = async () => {
     try {
+        if (!process.env.MONGODB_URI) {
+            console.error('ERROR: MONGODB_URI is not set in environment variables.');
+            return;
+        }
         await mongoose.connect(process.env.MONGODB_URI, {
-            serverSelectionTimeoutMS: 5000, // Fail fast if can't connect
+            serverSelectionTimeoutMS: 5000,
         });
         console.log('MongoDB Connected Successfully');
     } catch (err) {
-        console.error('FATAL: MongoDB Connection Failed');
+        console.error('ERROR: MongoDB Connection Failed');
         console.error(err.message);
-        process.exit(1); // Exit process to allow restart/failover
+        // Do not exit, let health check reflect status
     }
 };
 
