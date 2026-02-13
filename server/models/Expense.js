@@ -12,10 +12,10 @@ const ExpenseSchema = new mongoose.Schema({
         enum: ['Food', 'Travel', 'Snacks', 'Education', 'Personal', 'Others'],
         default: 'Others'
     },
-    deviceId: {
-        type: String,
-        required: true,
-        index: true
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
     note: {
         type: String,

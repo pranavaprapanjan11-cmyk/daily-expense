@@ -86,8 +86,8 @@ export default function Dashboard() {
 
     return (
         <div className="space-y-6">
-            {/* Summary Cards */}
-            <div className="grid gap-4 md:grid-cols-3">
+            {/* Top Section: Summary and Add Expense */}
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">Total Spending</CardTitle>
@@ -99,7 +99,15 @@ export default function Dashboard() {
                         </p>
                     </CardContent>
                 </Card>
-                <ReminderSettings />
+                <div className="md:col-span-1 lg:col-span-2">
+                    <ExpenseForm onExpenseAdded={fetchData} />
+                </div>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-3">
+                <div className="lg:col-span-1">
+                    <ReminderSettings />
+                </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
@@ -115,7 +123,7 @@ export default function Dashboard() {
                                     <XAxis dataKey="date" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
                                     <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `₹${value}`} />
                                     <Tooltip
-                                        formatter={(value: number) => [`₹${value}`, 'Amount']}
+                                        formatter={(value: number | undefined) => [`₹${(value || 0).toFixed(2)}`, 'Amount']}
                                         cursor={{ fill: 'transparent' }}
                                     />
                                     <Bar dataKey="amount" fill="#3b82f6" radius={[4, 4, 0, 0]} />
@@ -138,7 +146,7 @@ export default function Dashboard() {
                                         cx="50%"
                                         cy="50%"
                                         labelLine={false}
-                                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                        label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
                                         outerRadius={80}
                                         fill="#8884d8"
                                         dataKey="value"
@@ -147,7 +155,7 @@ export default function Dashboard() {
                                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                         ))}
                                     </Pie>
-                                    <Tooltip formatter={(value: number) => [`₹${value}`, 'Amount']} />
+                                    <Tooltip formatter={(value: number | undefined) => [`₹${(value || 0).toFixed(2)}`, 'Amount']} />
                                     <Legend />
                                 </PieChart>
                             </ResponsiveContainer>
@@ -157,11 +165,8 @@ export default function Dashboard() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                <div className="col-span-4">
+                <div className="col-span-7">
                     <ExpenseList expenses={expenses} onDelete={fetchData} />
-                </div>
-                <div className="col-span-3">
-                    <ExpenseForm onExpenseAdded={fetchData} />
                 </div>
             </div>
         </div>

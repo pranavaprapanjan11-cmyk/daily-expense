@@ -11,11 +11,18 @@ export default function DashboardPage() {
     const { user, loading, logout } = useAuth();
     const router = useRouter();
 
-    // NO LOGIN REQUIREMENT - We use deviceId automatically in api.ts
-    const userDisplay = user ? user.username : "Guest User";
+    useEffect(() => {
+        if (!loading && !user) {
+            router.push("/login");
+        }
+    }, [user, loading, router]);
 
     if (loading) {
         return <div className="flex h-screen items-center justify-center">Loading...</div>;
+    }
+
+    if (!user) {
+        return null;
     }
 
     return (
@@ -24,17 +31,11 @@ export default function DashboardPage() {
                 <h1 className="text-lg font-bold">Expense Manager</h1>
                 <div className="flex items-center gap-4">
                     <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        Welcome, {userDisplay}
+                        Welcome, {user.username}
                     </span>
-                    {user ? (
-                        <Button variant="outline" size="sm" onClick={logout}>
-                            Logout
-                        </Button>
-                    ) : (
-                        <Link href="/login">
-                            <Button variant="outline" size="sm">Login</Button>
-                        </Link>
-                    )}
+                    <Button variant="outline" size="sm" onClick={logout}>
+                        Logout
+                    </Button>
                 </div>
             </header>
             <main className="container mx-auto p-4 lg:p-6">

@@ -54,6 +54,7 @@ const connectDB = async () => {
 connectDB();
 
 // Routes
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/expenses', require('./routes/expenses'));
 
 // Health Check Endpoint
