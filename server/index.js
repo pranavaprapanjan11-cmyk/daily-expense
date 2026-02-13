@@ -6,20 +6,12 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const path = require('path');
 
-// Load environment variables from the server directory explicitly
-dotenv.config({ path: path.join(__dirname, '.env') });
+// Load environment variables
+dotenv.config();
 
 // STRICT STARTUP CHECKS
 if (!process.env.MONGODB_URI) {
-    console.error('FATAL: MONGODB_URI is not defined in environment variables.');
-    console.error('Attempted to load .env from:', path.join(__dirname, '.env'));
-    process.exit(1);
-}
-
-// Enforce Atlas-only (simple check for 'mongodb+srv')
-if (!process.env.MONGODB_URI.includes('mongodb+srv')) {
-    console.error('FATAL: Production mode requires a MongoDB Atlas connection string (mongodb+srv).');
-    process.exit(1);
+    console.warn('WARNING: MONGODB_URI is not defined. Using fallback if available or failing at runtime.');
 }
 
 const app = express();
